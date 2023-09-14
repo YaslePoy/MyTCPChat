@@ -36,7 +36,11 @@ namespace MyChatClient
         }
         public static void HandleServer(object sender, string data)
         {
-
+            if (data.StartsWith("/msg"))
+            {
+                var splited = data.Split(' ');
+                Console.WriteLine($"[{splited[2]} form {splited[1]}] : {splited[3]}");
+            }
         }
     }
 }
